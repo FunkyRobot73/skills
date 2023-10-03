@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class FirstComponent {
 
+  name: string = "";
+  email: string = "";
+  message: string = "";
+
 }
