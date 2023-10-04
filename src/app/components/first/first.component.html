@@ -1,6 +1,7 @@
 <div class="form-container">
     <h2>Simple Form</h2>
-    <form>
+    <form (ngSubmit)="onSubmit()">
+    <!-- <form >     -->
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" id="name" [(ngModel)]="name" name="name" required>
@@ -14,13 +15,27 @@
             <input type="text" id="message" [(ngModel)]="message" name="message" required>
         </div>
         <button type="submit"> Submit</button>
+        <!-- <button type="submit" (click)="onSubmit()"> Submit</button> -->
     </form>
 
-    <div>
+    <!-- <div *ngIf="isSubmitted">
         <h3>Form Date:</h3>
         <p><strong>Name: {{ name }}</strong></p>
         <p><strong>Email: {{ email }}</strong></p>
         <p><strong>Message: {{ message }}</strong></p>
-    </div>
-
+    </div> -->
+    <table *ngIf="isSubmitted">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let msg of messages">
+            <td>{{ msg.name }}</td>
+            <td>{{ msg.email }}</td>
+            <td>{{ msg.message }}</td>
+        </tr>
+    </table>    
 </div>
