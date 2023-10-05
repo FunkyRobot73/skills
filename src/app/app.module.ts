@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirstComponent } from './components/first/first.component';
 import { FormsModule } from '@angular/forms';
+import { MessageDetailsComponent } from './components/message-details/message-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FirstComponent
+    FirstComponent,
+    MessageDetailsComponent
   ],
   imports: [
     BrowserModule,
