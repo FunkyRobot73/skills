@@ -23,7 +23,7 @@ export class FirstComponent {
 
   onSubmit() : void {
     this.isSubmitted = true;
-    this.messages.push({
+    this.service.insert({
       "name": this.name,
       "email": this.email,
       "message": this.message
@@ -33,6 +33,6 @@ export class FirstComponent {
   };
 
   deleteMessage(index: number):void {
-    this.messages.splice(index, 1);
+    this.service.deleteMessage(index);
   }
 }
