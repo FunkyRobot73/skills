@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SsuperService } from 'src/app/services/ssuper.service';
 
 @Component({
   selector: 'app-first',
@@ -12,6 +13,13 @@ export class FirstComponent {
   message: string = "";
   isSubmitted: boolean = false;
   messages: Array<any> = [];
+
+  constructor(
+    private service: SsuperService
+  ) {
+    this.messages = this.service.getAllMessages();
+    this.isSubmitted = this.messages.length > 0;
+  }
 
   onSubmit() : void {
     this.isSubmitted = true;
