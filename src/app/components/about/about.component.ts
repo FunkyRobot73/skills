@@ -11,8 +11,15 @@ export class AboutComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) {};
   param: any;
+  queryParam: any;
   ngOnInit(): void {
     console.log(this.activatedRoute)
     this.param = this.activatedRoute.snapshot.params['username'];
+    this.queryParam = this.activatedRoute.snapshot.queryParams['lastname']
   }
 }
+
+
+// https://fakestoreapi.com/products
+
+// https://back.swap2go.ca/comics
